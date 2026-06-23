@@ -75,6 +75,58 @@ export default function Home() {
               </p>
             </div>
           </div>
+          <div className="mt-20 flex justify-center">
+            <div className="relative h-[360px] w-[240px] rounded-[3rem] border border-white/15 bg-white/[0.06] p-3 shadow-2xl backdrop-blur-2xl">
+              <div className="h-full w-full rounded-[2.4rem] border border-white/10 bg-black/60 p-5">
+                <div className="mx-auto mb-6 h-6 w-24 rounded-full bg-white/10" />
+
+                <div className="space-y-4">
+                  <div className="rounded-3xl bg-white/[0.08] p-4">
+                    <p className="text-xs text-white/40">Featured Device</p>
+                    <h3 className="mt-2 text-lg font-semibold">
+                      iPhone 15 Pro
+                    </h3>
+                    <p className="mt-1 text-sm text-cyan-400">
+                      Condition Score 96%
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="rounded-2xl bg-white/[0.07] p-3">
+                      <p className="text-xs text-white/40">Battery</p>
+                      <p className="mt-1 font-semibold">98%</p>
+                    </div>
+
+                    <div className="rounded-2xl bg-white/[0.07] p-3">
+                      <p className="text-xs text-white/40">Escrow</p>
+                      <p className="mt-1 font-semibold text-green-400">
+                        Active
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="rounded-3xl bg-gradient-to-r from-cyan-400/20 to-violet-500/20 p-4">
+                    <p className="text-xs text-white/50">Safe meetup point</p>
+                    <p className="mt-1 text-sm font-semibold">
+                      Mall Central Lobby
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="absolute -right-10 top-16 rounded-2xl border border-white/10 bg-white/[0.08] px-4 py-3 backdrop-blur-xl">
+                <p className="text-xs text-white/50">Funds Held</p>
+                <p className="text-sm font-semibold text-cyan-300">
+                  Rp 14.999.000
+                </p>
+              </div>
+
+              <div className="absolute -left-12 bottom-20 rounded-2xl border border-white/10 bg-white/[0.08] px-4 py-3 backdrop-blur-xl">
+                <p className="text-xs text-white/50">Verified COD</p>
+                <p className="text-sm font-semibold text-violet-300">2.4 km</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
