@@ -1,16 +1,20 @@
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-black text-white overflow-hidden">
-      {/* Aurora Background */}
+    <main className="relative min-h-screen overflow-hidden bg-black text-white">
+      {/* =========================
+          AURORA BACKGROUND
+      ========================== */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-[-150px] left-[-150px] w-[500px] h-[500px] bg-cyan-500/20 rounded-full blur-[140px]" />
-
-        <div className="absolute bottom-[-150px] right-[-150px] w-[500px] h-[500px] bg-violet-500/20 rounded-full blur-[140px]" />
-
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[120px]" />
+        <div className="absolute top-[-150px] left-[-150px] h-[500px] w-[500px] rounded-full bg-cyan-500/20 blur-[140px]" />
+        <div className="absolute right-[-150px] bottom-[-150px] h-[500px] w-[500px] rounded-full bg-violet-500/20 blur-[140px]" />
+        <div className="absolute top-1/2 left-1/2 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/10 blur-[120px]" />
       </div>
-      <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-2xl bg-white/[0.03] border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+
+      {/* =========================
+          NAVBAR
+      ========================== */}
+      <nav className="fixed top-0 left-0 z-50 w-full border-b border-white/10 bg-white/[0.03] backdrop-blur-2xl">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
           <h1 className="text-2xl font-bold">GadgetSwap</h1>
 
           <div className="flex gap-8 text-sm text-white/80">
@@ -22,32 +26,43 @@ export default function Home() {
         </div>
       </nav>
 
+      {/* =========================
+          HERO SECTION
+      ========================== */}
       <section className="relative z-10 flex min-h-screen items-center justify-center px-6 pt-32">
-        <div className="text-center max-w-4xl">
-          <p className="text-cyan-400 font-medium mb-4">
+        <div className="max-w-5xl text-center">
+          {/* Hero Badge */}
+          <p className="mb-4 font-medium text-cyan-400">
             Premium Gadget Marketplace
           </p>
 
-          <h1 className="text-6xl md:text-8xl font-bold leading-tight">
+          {/* Hero Title */}
+          <h1 className="text-6xl leading-tight font-bold md:text-8xl">
             Buy & Sell
             <br />
             Gadgets Safely
           </h1>
 
-          <p className="mt-6 text-lg text-white/60 max-w-2xl mx-auto">
+          {/* Hero Description */}
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-white/60">
             Secure transactions with escrow protection, verified COD planning,
             and intelligent gadget condition scoring.
           </p>
 
+          {/* CTA Buttons */}
           <div className="mt-10 flex justify-center gap-4">
-            <button className="px-8 py-4 rounded-full bg-white text-black font-semibold hover:scale-105 transition">
+            <button className="rounded-full bg-white px-8 py-4 font-semibold text-black transition hover:scale-105">
               Explore Marketplace
             </button>
 
-            <button className="px-8 py-4 rounded-full border border-white/20 hover:bg-white/10 transition">
+            <button className="rounded-full border border-white/20 px-8 py-4 transition hover:bg-white/10">
               Sell Your Gadget
             </button>
           </div>
+
+          {/* =========================
+              FEATURE CARDS
+          ========================== */}
           <div className="mt-16 grid grid-cols-1 gap-4 md:grid-cols-3">
             <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 text-left backdrop-blur-2xl">
               <p className="text-sm text-cyan-400">01</p>
@@ -75,11 +90,17 @@ export default function Home() {
               </p>
             </div>
           </div>
+
+          {/* =========================
+              FLOATING GADGET MOCKUP
+          ========================== */}
           <div className="mt-12 flex justify-center pb-24">
             <div className="relative h-[520px] w-[340px] rounded-[2.4rem] border border-white/15 bg-white/[0.06] p-3 shadow-2xl backdrop-blur-2xl">
               <div className="h-full w-full rounded-[2.4rem] border border-white/10 bg-black/60 p-5">
+                {/* Phone Speaker */}
                 <div className="mx-auto mb-6 h-6 w-24 rounded-full bg-white/10" />
 
+                {/* Phone Content */}
                 <div className="space-y-4">
                   <div className="rounded-3xl bg-white/[0.08] p-4">
                     <p className="text-xs text-white/40">Featured Device</p>
@@ -114,17 +135,44 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="absolute -right-10 top-16 rounded-2xl border border-white/10 bg-white/[0.08] px-4 py-3 backdrop-blur-xl">
+              {/* Floating Badge - Funds */}
+              <div className="absolute top-16 -right-10 rounded-2xl border border-white/10 bg-white/[0.08] px-4 py-3 backdrop-blur-xl">
                 <p className="text-xs text-white/50">Funds Held</p>
                 <p className="text-sm font-semibold text-cyan-300">
                   Rp 14.999.000
                 </p>
               </div>
 
-              <div className="absolute -left-12 bottom-20 rounded-2xl border border-white/10 bg-white/[0.08] px-4 py-3 backdrop-blur-xl">
+              {/* Floating Badge - COD */}
+              <div className="absolute bottom-20 -left-12 rounded-2xl border border-white/10 bg-white/[0.08] px-4 py-3 backdrop-blur-xl">
                 <p className="text-xs text-white/50">Verified COD</p>
                 <p className="text-sm font-semibold text-violet-300">2.4 km</p>
               </div>
+            </div>
+          </div>
+
+          {/* =========================
+              STATISTICS SECTION
+          ========================== */}
+          <div className="grid grid-cols-2 gap-4 pb-28 md:grid-cols-4">
+            <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-xl">
+              <h3 className="text-3xl font-bold">25K+</h3>
+              <p className="mt-2 text-sm text-white/50">Active Users</p>
+            </div>
+
+            <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-xl">
+              <h3 className="text-3xl font-bold">12K+</h3>
+              <p className="mt-2 text-sm text-white/50">Transactions</p>
+            </div>
+
+            <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-xl">
+              <h3 className="text-3xl font-bold">98%</h3>
+              <p className="mt-2 text-sm text-white/50">Escrow Success Rate</p>
+            </div>
+
+            <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-xl">
+              <h3 className="text-3xl font-bold">4.9★</h3>
+              <p className="mt-2 text-sm text-white/50">User Rating</p>
             </div>
           </div>
         </div>
