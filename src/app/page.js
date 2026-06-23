@@ -407,6 +407,113 @@ export default function Home() {
               </div>
             </div>
           </div>
+          {/* =========================
+    CONDITION SCORE PREVIEW
+========================== */}
+          <div className="pb-32">
+            <div className="mb-12 text-center">
+              <p className="text-cyan-400">Dynamic Gadget Checker</p>
+
+              <h2 className="mt-3 text-4xl font-bold md:text-5xl">
+                Automatic Condition Score
+              </h2>
+
+              <p className="mx-auto mt-4 max-w-2xl text-white/60">
+                Sellers can simulate device checks and generate a transparent
+                condition score before listing their gadget.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+              {/* Checker Form Preview */}
+              <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 text-left backdrop-blur-2xl">
+                <h3 className="text-2xl font-semibold">Device Inspection</h3>
+
+                <div className="mt-6 space-y-4">
+                  <div className="flex items-center justify-between rounded-2xl bg-white/[0.04] p-4">
+                    <div>
+                      <p className="font-medium">Battery Health</p>
+                      <p className="text-sm text-white/50">
+                        Minimum 85% recommended
+                      </p>
+                    </div>
+                    <span className="rounded-full bg-green-500/20 px-3 py-1 text-sm text-green-300">
+                      98%
+                    </span>
+                  </div>
+
+                  <div className="flex items-center justify-between rounded-2xl bg-white/[0.04] p-4">
+                    <div>
+                      <p className="font-medium">Screen Condition</p>
+                      <p className="text-sm text-white/50">
+                        No dead pixel or burn-in
+                      </p>
+                    </div>
+                    <span className="rounded-full bg-green-500/20 px-3 py-1 text-sm text-green-300">
+                      Passed
+                    </span>
+                  </div>
+
+                  <div className="flex items-center justify-between rounded-2xl bg-white/[0.04] p-4">
+                    <div>
+                      <p className="font-medium">Body & Frame</p>
+                      <p className="text-sm text-white/50">
+                        Minor scratches accepted
+                      </p>
+                    </div>
+                    <span className="rounded-full bg-cyan-500/20 px-3 py-1 text-sm text-cyan-300">
+                      Excellent
+                    </span>
+                  </div>
+
+                  <div className="flex items-center justify-between rounded-2xl bg-white/[0.04] p-4">
+                    <div>
+                      <p className="font-medium">Hardware Functions</p>
+                      <p className="text-sm text-white/50">
+                        Camera, speaker, charging
+                      </p>
+                    </div>
+                    <span className="rounded-full bg-green-500/20 px-3 py-1 text-sm text-green-300">
+                      Normal
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Score Result Preview */}
+              <div className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-cyan-500/10 to-violet-500/10 p-8 text-left backdrop-blur-2xl">
+                <p className="text-sm text-white/50">Generated Score</p>
+
+                <h3 className="mt-4 text-7xl font-bold">96%</h3>
+
+                <p className="mt-4 text-xl font-semibold text-cyan-300">
+                  Premium Condition
+                </p>
+
+                <p className="mt-4 leading-7 text-white/60">
+                  This gadget is categorized as premium condition based on
+                  battery health, display quality, physical condition, and
+                  hardware functionality.
+                </p>
+
+                <div className="mt-8 h-4 overflow-hidden rounded-full bg-white/10">
+                  <div className="h-full w-[96%] rounded-full bg-gradient-to-r from-cyan-400 to-violet-400" />
+                </div>
+
+                <div className="mt-8 grid grid-cols-2 gap-4">
+                  <div className="rounded-2xl bg-white/[0.05] p-4">
+                    <p className="text-sm text-white/50">Listing Trust</p>
+                    <p className="mt-2 text-xl font-bold">High</p>
+                  </div>
+
+                  <div className="rounded-2xl bg-white/[0.05] p-4">
+                    <p className="text-sm text-white/50">Buyer Confidence</p>
+                    <p className="mt-2 text-xl font-bold">Strong</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
