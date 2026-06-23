@@ -1,4 +1,5 @@
 import EscrowStatusCard from "@/components/escrow/EscrowStatusCard";
+import EscrowTimeline from "@/components/escrow/EscrowTimeline";
 
 export default function EscrowPage() {
   return (
@@ -15,6 +16,7 @@ export default function EscrowPage() {
           </p>
         </div>
         <EscrowStatusCard />
+        <EscrowTimeline />
       </div>
     </main>
   );
