@@ -266,6 +266,67 @@ export default function Home() {
               </div>
             </div>
           </div>
+          {/* =========================
+    ESCROW FLOW TIMELINE
+========================== */}
+          <div className="pb-32">
+            <div className="mb-12 text-center">
+              <p className="text-cyan-400">Secure Transaction Flow</p>
+
+              <h2 className="mt-3 text-4xl font-bold md:text-5xl">
+                How Escrow Works
+              </h2>
+
+              <p className="mx-auto mt-4 max-w-2xl text-white/60">
+                GadgetSwap simulates a safer transaction flow where buyer funds
+                are held until the item is received and confirmed.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-5">
+              <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 text-left backdrop-blur-xl">
+                <p className="text-sm text-cyan-400">Step 01</p>
+                <h3 className="mt-4 font-semibold">Buyer Pays</h3>
+                <p className="mt-3 text-sm leading-6 text-white/50">
+                  Buyer chooses a gadget and starts payment through escrow.
+                </p>
+              </div>
+
+              <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 text-left backdrop-blur-xl">
+                <p className="text-sm text-cyan-400">Step 02</p>
+                <h3 className="mt-4 font-semibold">Funds Held</h3>
+                <p className="mt-3 text-sm leading-6 text-white/50">
+                  Money is temporarily held by the system, not sent to seller
+                  yet.
+                </p>
+              </div>
+
+              <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 text-left backdrop-blur-xl">
+                <p className="text-sm text-cyan-400">Step 03</p>
+                <h3 className="mt-4 font-semibold">Seller Ships</h3>
+                <p className="mt-3 text-sm leading-6 text-white/50">
+                  Seller sends the gadget or confirms a verified COD meetup.
+                </p>
+              </div>
+
+              <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 text-left backdrop-blur-xl">
+                <p className="text-sm text-cyan-400">Step 04</p>
+                <h3 className="mt-4 font-semibold">Buyer Confirms</h3>
+                <p className="mt-3 text-sm leading-6 text-white/50">
+                  Buyer checks the gadget condition and confirms the item is
+                  valid.
+                </p>
+              </div>
+
+              <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 text-left backdrop-blur-xl">
+                <p className="text-sm text-cyan-400">Step 05</p>
+                <h3 className="mt-4 font-semibold">Funds Released</h3>
+                <p className="mt-3 text-sm leading-6 text-white/50">
+                  Funds are released to the seller after buyer confirmation.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
