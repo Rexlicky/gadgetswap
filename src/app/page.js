@@ -22,7 +22,7 @@ export default function Home() {
         </div>
       </nav>
 
-      <section className="relative z-10 min-h-screen flex items-center justify-center px-6">
+      <section className="relative z-10 flex min-h-screen items-center justify-center px-6 pt-32">
         <div className="text-center max-w-4xl">
           <p className="text-cyan-400 font-medium mb-4">
             Premium Gadget Marketplace
@@ -75,8 +75,8 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="mt-20 flex justify-center">
-            <div className="relative h-[360px] w-[240px] rounded-[3rem] border border-white/15 bg-white/[0.06] p-3 shadow-2xl backdrop-blur-2xl">
+          <div className="mt-12 flex justify-center pb-24">
+            <div className="relative h-[520px] w-[340px] rounded-[2.4rem] border border-white/15 bg-white/[0.06] p-3 shadow-2xl backdrop-blur-2xl">
               <div className="h-full w-full rounded-[2.4rem] border border-white/10 bg-black/60 p-5">
                 <div className="mx-auto mb-6 h-6 w-24 rounded-full bg-white/10" />
 
