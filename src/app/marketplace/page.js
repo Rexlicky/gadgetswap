@@ -1,8 +1,11 @@
 import SearchBar from "@/components/marketplace/SearchBar";
+import CategoryFilters from "@/components/marketplace/CategoryFilters";
+
 export default function MarketplacePage() {
   return (
     <main className="min-h-screen bg-black text-white">
       <div className="mx-auto max-w-7xl px-6 py-32">
+        {/* Header */}
         <div className="mb-12">
           <p className="text-cyan-400">Marketplace Gadget</p>
 
@@ -13,7 +16,12 @@ export default function MarketplacePage() {
             kondisi transparan.
           </p>
         </div>
+
+        {/* Search */}
         <SearchBar />
+
+        {/* Filter */}
+        <CategoryFilters />
       </div>
     </main>
   );
