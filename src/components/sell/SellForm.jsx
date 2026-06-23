@@ -33,6 +33,62 @@ export default function SellForm() {
             className="w-full rounded-2xl border border-white/10 bg-black/30 px-4 py-4 outline-none focus:border-cyan-400"
           />
         </div>
+
+        {/* =========================
+            Pemeriksaan Kondisi
+        ========================= */}
+
+        <div className="mt-8">
+          <h3 className="mb-5 text-xl font-semibold">
+            Pemeriksaan Kondisi Gadget
+          </h3>
+
+          <div className="space-y-4">
+            <label className="flex items-center justify-between rounded-2xl border border-white/10 p-4">
+              <span>Kesehatan Baterai di atas 85%</span>
+              <input type="checkbox" />
+            </label>
+
+            <label className="flex items-center justify-between rounded-2xl border border-white/10 p-4">
+              <span>Layar Bebas Dead Pixel</span>
+              <input type="checkbox" />
+            </label>
+
+            <label className="flex items-center justify-between rounded-2xl border border-white/10 p-4">
+              <span>Body Mulus Tanpa Penyok</span>
+              <input type="checkbox" />
+            </label>
+
+            <label className="flex items-center justify-between rounded-2xl border border-white/10 p-4">
+              <span>Kamera Berfungsi Normal</span>
+              <input type="checkbox" />
+            </label>
+
+            <label className="flex items-center justify-between rounded-2xl border border-white/10 p-4">
+              <span>Face ID / Fingerprint Berfungsi</span>
+              <input type="checkbox" />
+            </label>
+          </div>
+        </div>
+
+        <div className="mt-8">
+          <button
+            className="
+              rounded-full
+              bg-gradient-to-r
+              from-cyan-400
+              to-violet-500
+              px-8
+              py-4
+              font-semibold
+              text-white
+              transition
+              hover:scale-105
+            "
+          >
+            Analisis Kondisi
+          </button>
+        </div>
       </div>
     </div>
   );
