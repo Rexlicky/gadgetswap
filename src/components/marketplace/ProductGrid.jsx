@@ -3,6 +3,7 @@ import ProductCard from "./ProductCard";
 export default function ProductGrid() {
   const products = [
     {
+      slug: "iphone-15-pro",
       emoji: "📱",
       name: "iPhone 15 Pro",
       price: "Rp 14.999.000",
@@ -10,6 +11,7 @@ export default function ProductGrid() {
       badge: "Dilindungi Rekber",
     },
     {
+      slug: "macbook-pro-m3",
       emoji: "💻",
       name: "MacBook Pro M3",
       price: "Rp 28.500.000",
@@ -17,6 +19,7 @@ export default function ProductGrid() {
       badge: "Penjual Terverifikasi",
     },
     {
+      slug: "galaxy-s25-ultra",
       emoji: "📱",
       name: "Galaxy S25 Ultra",
       price: "Rp 16.999.000",
@@ -24,6 +27,7 @@ export default function ProductGrid() {
       badge: "COD Tersedia",
     },
     {
+      slug: "rog-zephyrus-g16",
       emoji: "💻",
       name: "ROG Zephyrus G16",
       price: "Rp 24.750.000",
@@ -31,6 +35,7 @@ export default function ProductGrid() {
       badge: "Dilindungi Rekber",
     },
     {
+      slug: "google-pixel-10",
       emoji: "📱",
       name: "Google Pixel 10",
       price: "Rp 12.500.000",
@@ -38,6 +43,7 @@ export default function ProductGrid() {
       badge: "COD Tersedia",
     },
     {
+      slug: "macbook-air-m4",
       emoji: "💻",
       name: "MacBook Air M4",
       price: "Rp 19.999.000",
