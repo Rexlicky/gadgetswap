@@ -1,5 +1,6 @@
 import SearchBar from "@/components/marketplace/SearchBar";
 import CategoryFilters from "@/components/marketplace/CategoryFilters";
+import ProductGrid from "@/components/marketplace/ProductGrid";
 
 export default function MarketplacePage() {
   return (
@@ -22,6 +23,9 @@ export default function MarketplacePage() {
 
         {/* Filter */}
         <CategoryFilters />
+
+        {/* Product Grid */}
+        <ProductGrid />
       </div>
     </main>
   );
