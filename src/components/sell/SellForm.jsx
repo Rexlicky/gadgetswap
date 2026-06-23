@@ -114,6 +114,29 @@ export default function SellForm() {
             />
           </div>
         </div>
+              
+        {/* Preview Listing */}
+        <div className="mt-6 rounded-[2rem] border border-white/10 bg-white/[0.04] p-6">
+          <p className="text-sm text-white/50">Preview Listing</p>
+
+          <div className="mt-5 rounded-3xl border border-white/10 bg-black/30 p-5">
+            <div className="mb-5 flex h-52 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-500/10 to-violet-500/10">
+              <span className="text-7xl">📱</span>
+            </div>
+
+            <div className="flex items-center justify-between">
+              <h3 className="font-semibold">Gadget Baru</h3>
+
+              <span className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs text-cyan-300">
+                {score}%
+              </span>
+            </div>
+
+            <p className="mt-3 text-xl font-bold">Rp 0</p>
+
+            <p className="mt-2 text-sm text-white/50">{conditionLabel}</p>
+          </div>
+        </div>
       </div>
     </div>
   );
