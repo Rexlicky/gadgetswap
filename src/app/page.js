@@ -1,7 +1,15 @@
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-white">
-      <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-white/5 border-b border-white/10">
+    <main className="relative min-h-screen bg-black text-white overflow-hidden">
+      {/* Aurora Background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-[-150px] left-[-150px] w-[500px] h-[500px] bg-cyan-500/20 rounded-full blur-[140px]" />
+
+        <div className="absolute bottom-[-150px] right-[-150px] w-[500px] h-[500px] bg-violet-500/20 rounded-full blur-[140px]" />
+
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-blue-500/10 rounded-full blur-[120px]" />
+      </div>
+      <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-2xl bg-white/[0.03] border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
           <h1 className="text-2xl font-bold">GadgetSwap</h1>
 
@@ -14,7 +22,7 @@ export default function Home() {
         </div>
       </nav>
 
-      <section className="min-h-screen flex items-center justify-center px-6">
+      <section className="relative z-10 min-h-screen flex items-center justify-center px-6">
         <div className="text-center max-w-4xl">
           <p className="text-cyan-400 font-medium mb-4">
             Premium Gadget Marketplace
