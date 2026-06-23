@@ -7,6 +7,7 @@ import FeaturedGadgets from "@/components/FeaturedGadgets";
 import EscrowTimeline from "@/components/EscrowTimeline";
 import CodPlanner from "@/components/CodPlanner";
 import ConditionScore from "@/components/ConditionScore";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -57,6 +58,7 @@ export default function Home() {
           <ConditionScore />
         </div>
       </section>
+      <Footer />
     </main>
   );
 }
