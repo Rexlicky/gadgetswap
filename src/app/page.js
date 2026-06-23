@@ -48,6 +48,33 @@ export default function Home() {
               Sell Your Gadget
             </button>
           </div>
+          <div className="mt-16 grid grid-cols-1 gap-4 md:grid-cols-3">
+            <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 text-left backdrop-blur-2xl">
+              <p className="text-sm text-cyan-400">01</p>
+              <h3 className="mt-4 text-xl font-semibold">Escrow Protection</h3>
+              <p className="mt-3 text-sm leading-6 text-white/55">
+                Buyer funds are safely held until the gadget is confirmed as
+                received.
+              </p>
+            </div>
+
+            <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 text-left backdrop-blur-2xl">
+              <p className="text-sm text-violet-400">02</p>
+              <h3 className="mt-4 text-xl font-semibold">Verified COD</h3>
+              <p className="mt-3 text-sm leading-6 text-white/55">
+                Plan safer meetups with recommended public meeting points.
+              </p>
+            </div>
+
+            <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 text-left backdrop-blur-2xl">
+              <p className="text-sm text-blue-400">03</p>
+              <h3 className="mt-4 text-xl font-semibold">Condition Score</h3>
+              <p className="mt-3 text-sm leading-6 text-white/55">
+                Gadget condition is scored from battery health, screen, body,
+                and hardware checks.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </main>
