@@ -13,6 +13,7 @@ export default function SellForm() {
 
   const [productName, setProductName] = useState("");
   const [productPrice, setProductPrice] = useState("");
+  const [published, setPublished] = useState(false);
 
   const checkedCount = Object.values(checks).filter(Boolean).length;
   const score = checkedCount * 20;
@@ -41,10 +42,12 @@ export default function SellForm() {
   return (
     <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 backdrop-blur-xl">
       <div className="grid gap-6">
+        {/* Nama Gadget */}
         <div>
           <label className="mb-2 block text-sm text-white/60">
             Nama Gadget
           </label>
+
           <input
             type="text"
             value={productName}
@@ -54,8 +57,10 @@ export default function SellForm() {
           />
         </div>
 
+        {/* Harga */}
         <div>
           <label className="mb-2 block text-sm text-white/60">Harga</label>
+
           <input
             type="text"
             value={productPrice}
@@ -65,8 +70,10 @@ export default function SellForm() {
           />
         </div>
 
+        {/* Deskripsi */}
         <div>
           <label className="mb-2 block text-sm text-white/60">Deskripsi</label>
+
           <textarea
             rows="5"
             placeholder="Jelaskan kondisi gadget..."
@@ -74,7 +81,9 @@ export default function SellForm() {
           />
         </div>
 
-        {/* Pemeriksaan Kondisi */}
+        {/* =========================
+            Pemeriksaan Kondisi
+        ========================= */}
         <div className="mt-4">
           <h3 className="mb-5 text-xl font-semibold">
             Pemeriksaan Kondisi Gadget
@@ -93,6 +102,7 @@ export default function SellForm() {
                 className="flex cursor-pointer items-center justify-between rounded-2xl border border-white/10 p-4 transition hover:border-cyan-400/30"
               >
                 <span>{label}</span>
+
                 <input
                   type="checkbox"
                   checked={checks[key]}
@@ -104,7 +114,9 @@ export default function SellForm() {
           </div>
         </div>
 
-        {/* Hasil Skor */}
+        {/* =========================
+            Hasil Skor
+        ========================= */}
         <div className="mt-6 rounded-[2rem] border border-white/10 bg-gradient-to-br from-cyan-500/10 to-violet-500/10 p-6">
           <p className="text-sm text-white/50">Skor Kondisi</p>
 
@@ -122,7 +134,9 @@ export default function SellForm() {
           </div>
         </div>
 
-        {/* Preview Listing */}
+        {/* =========================
+            Preview Listing
+        ========================= */}
         <div className="mt-6 rounded-[2rem] border border-white/10 bg-white/[0.04] p-6">
           <p className="text-sm text-white/50">Preview Listing</p>
 
@@ -144,6 +158,44 @@ export default function SellForm() {
             <p className="mt-2 text-sm text-white/50">{conditionLabel}</p>
           </div>
         </div>
+
+        {/* =========================
+            Tombol Publish
+        ========================= */}
+        <div className="mt-6 flex justify-end">
+          <button
+            disabled={published}
+            onClick={() => setPublished(true)}
+            className="
+              rounded-full
+              bg-gradient-to-r
+              from-cyan-400
+              to-violet-500
+              px-8
+              py-4
+              font-semibold
+              text-white
+              transition
+              hover:scale-105
+              disabled:cursor-not-allowed
+              disabled:opacity-50
+            "
+          >
+            Publikasikan Listing
+          </button>
+        </div>
+
+        {published && (
+          <div className="mt-6 rounded-2xl border border-green-500/20 bg-green-500/10 p-5">
+            <p className="font-semibold text-green-400">
+              ✅ Listing berhasil dipublikasikan
+            </p>
+
+            <p className="mt-2 text-sm text-white/60">
+              Gadget sekarang tersedia di marketplace GadgetSwap.
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );
