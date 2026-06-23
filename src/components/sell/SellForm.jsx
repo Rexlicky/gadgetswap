@@ -11,6 +11,9 @@ export default function SellForm() {
     security: false,
   });
 
+  const [productName, setProductName] = useState("");
+  const [productPrice, setProductPrice] = useState("");
+
   const checkedCount = Object.values(checks).filter(Boolean).length;
   const score = checkedCount * 20;
 
@@ -44,6 +47,8 @@ export default function SellForm() {
           </label>
           <input
             type="text"
+            value={productName}
+            onChange={(e) => setProductName(e.target.value)}
             placeholder="Contoh: iPhone 15 Pro"
             className="w-full rounded-2xl border border-white/10 bg-black/30 px-4 py-4 outline-none focus:border-cyan-400"
           />
@@ -53,6 +58,8 @@ export default function SellForm() {
           <label className="mb-2 block text-sm text-white/60">Harga</label>
           <input
             type="text"
+            value={productPrice}
+            onChange={(e) => setProductPrice(e.target.value)}
             placeholder="Rp 14.999.000"
             className="w-full rounded-2xl border border-white/10 bg-black/30 px-4 py-4 outline-none focus:border-cyan-400"
           />
@@ -114,7 +121,7 @@ export default function SellForm() {
             />
           </div>
         </div>
-              
+
         {/* Preview Listing */}
         <div className="mt-6 rounded-[2rem] border border-white/10 bg-white/[0.04] p-6">
           <p className="text-sm text-white/50">Preview Listing</p>
@@ -125,14 +132,14 @@ export default function SellForm() {
             </div>
 
             <div className="flex items-center justify-between">
-              <h3 className="font-semibold">Gadget Baru</h3>
+              <h3 className="font-semibold">{productName || "Gadget Baru"}</h3>
 
               <span className="rounded-full bg-cyan-500/20 px-3 py-1 text-xs text-cyan-300">
                 {score}%
               </span>
             </div>
 
-            <p className="mt-3 text-xl font-bold">Rp 0</p>
+            <p className="mt-3 text-xl font-bold">{productPrice || "Rp 0"}</p>
 
             <p className="mt-2 text-sm text-white/50">{conditionLabel}</p>
           </div>
