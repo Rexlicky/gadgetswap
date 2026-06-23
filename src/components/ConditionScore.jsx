@@ -1,6 +1,6 @@
 export default function ConditionScore() {
   return (
-    <div className="pb-32">
+    <div className="pb-48">
       <div className="mb-12 text-center">
         <p className="text-cyan-400">Pengecek Kondisi Gadget</p>
 

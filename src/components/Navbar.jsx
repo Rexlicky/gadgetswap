@@ -1,6 +1,6 @@
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 z-50 w-full border-b border-white/10 bg-white/[0.03] backdrop-blur-2xl">
+    <nav className="fixed top-0 left-0 z-50 w-full border-b border-white/10 bg-black/40 backdrop-blur-2xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
         {/* Logo */}
         <h1 className="text-2xl font-bold">GadgetSwap</h1>

@@ -25,7 +25,7 @@ export default function Hero() {
           Lihat Katalog
         </button>
 
-        <button className="rounded-full border border-white/20 px-8 py-4 transition hover:bg-white/10">
+        <button className="rounded-full border border-white/20 bg-white/[0.03] px-8 py-4 backdrop-blur-xl transition hover:bg-white/10 hover:border-cyan-400/30">
           Jual Gadget
         </button>
       </div>
