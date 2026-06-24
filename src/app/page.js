@@ -7,7 +7,6 @@ import FeaturedGadgets from "@/components/FeaturedGadgets";
 import EscrowTimeline from "@/components/EscrowTimeline";
 import CodPlanner from "@/components/CodPlanner";
 import ConditionScore from "@/components/ConditionScore";
-import Footer from "@/components/Footer";
 import FAQ from "@/components/FAQ";
 import Testimonials from "@/components/Testimonials";
 import CallToAction from "@/components/CallToAction";
@@ -72,7 +71,6 @@ export default function Home() {
           <CallToAction />
         </div>
       </section>
-      <Footer />
     </main>
   );
 }
