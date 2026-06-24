@@ -10,6 +10,7 @@ import ConditionScore from "@/components/ConditionScore";
 import Footer from "@/components/Footer";
 import FAQ from "@/components/FAQ";
 import Testimonials from "@/components/Testimonials";
+import CallToAction from "@/components/CallToAction";
 
 export default function Home() {
   return (
@@ -67,6 +68,8 @@ export default function Home() {
           <FAQ />
 
           <Testimonials />
+
+          <CallToAction />
         </div>
       </section>
       <Footer />
