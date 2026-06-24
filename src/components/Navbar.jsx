@@ -2,9 +2,37 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const navItems = [
+    {
+      name: "Beranda",
+      href: "/",
+    },
+    {
+      name: "Katalog",
+      href: "/marketplace",
+    },
+    {
+      name: "Jual",
+      href: "/sell",
+    },
+    {
+      name: "Rekber",
+      href: "/escrow",
+    },
+    {
+      name: "Penjual",
+      href: "/seller",
+    },
+    {
+      name: "Pembeli",
+      href: "/buyer",
+    },
+  ];
 
   return (
     <nav className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-black/40 backdrop-blur-2xl">
@@ -15,30 +43,20 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden gap-8 text-sm text-white/80 md:flex">
-          <Link href="/" className="transition hover:text-cyan-400">
-            Beranda
-          </Link>
-
-          <Link href="/marketplace" className="transition hover:text-cyan-400">
-            Katalog
-          </Link>
-
-          <Link href="/sell" className="transition hover:text-cyan-400">
-            Jual
-          </Link>
-
-          <Link href="/escrow" className="transition hover:text-cyan-400">
-            Rekber
-          </Link>
-
-          <Link href="/seller" className="transition hover:text-cyan-400">
-            Penjual
-          </Link>
-
-          <Link href="/buyer" className="transition hover:text-cyan-400">
-            Pembeli
-          </Link>
+        <div className="hidden gap-8 text-sm md:flex">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`transition ${
+                pathname === item.href
+                  ? "text-cyan-400"
+                  : "text-white/80 hover:text-cyan-400"
+              }`}
+            >
+              {item.name}
+            </Link>
+          ))}
         </div>
 
         {/* Mobile Button */}
@@ -54,49 +72,18 @@ export default function Navbar() {
       {menuOpen && (
         <div className="border-t border-white/10 bg-black/95 backdrop-blur-xl md:hidden">
           <div className="flex flex-col px-6 py-4">
-            <Link href="/" className="py-3" onClick={() => setMenuOpen(false)}>
-              Beranda
-            </Link>
-
-            <Link
-              href="/marketplace"
-              className="py-3"
-              onClick={() => setMenuOpen(false)}
-            >
-              Katalog
-            </Link>
-
-            <Link
-              href="/sell"
-              className="py-3"
-              onClick={() => setMenuOpen(false)}
-            >
-              Jual
-            </Link>
-
-            <Link
-              href="/escrow"
-              className="py-3"
-              onClick={() => setMenuOpen(false)}
-            >
-              Rekber
-            </Link>
-
-            <Link
-              href="/seller"
-              className="py-3"
-              onClick={() => setMenuOpen(false)}
-            >
-              Penjual
-            </Link>
-
-            <Link
-              href="/buyer"
-              className="py-3"
-              onClick={() => setMenuOpen(false)}
-            >
-              Pembeli
-            </Link>
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setMenuOpen(false)}
+                className={`py-3 ${
+                  pathname === item.href ? "text-cyan-400" : "text-white"
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
           </div>
         </div>
       )}
