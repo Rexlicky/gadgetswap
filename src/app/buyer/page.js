@@ -1,5 +1,6 @@
 import BuyerStats from "@/components/buyer/BuyerStats";
 import BuyerOrders from "@/components/buyer/BuyerOrders";
+import Wishlist from "@/components/buyer/Wishlist";
 
 export default function BuyerPage() {
   return (
@@ -17,6 +18,7 @@ export default function BuyerPage() {
 
         <BuyerStats />
         <BuyerOrders />
+        <Wishlist />
       </div>
     </main>
   );
