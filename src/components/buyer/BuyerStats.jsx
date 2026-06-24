@@ -23,7 +23,7 @@ export default function BuyerStats() {
       {stats.map((item) => (
         <div
           key={item.title}
-          className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 backdrop-blur-xl"
+          className="card-hover rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 backdrop-blur-xl"
         >
           <p className="text-sm text-white/50">{item.title}</p>
 
