@@ -16,8 +16,28 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "GadgetSwap",
-  description: "Marketplace gadget premium dengan sistem rekber.",
+  title: {
+    default: "GadgetSwap",
+    template: "%s | GadgetSwap",
+  },
+
+  description:
+    "Marketplace gadget premium dengan sistem rekber, COD terverifikasi, dan penilaian kondisi otomatis.",
+
+  keywords: [
+    "gadget",
+    "marketplace",
+    "rekber",
+    "jual beli gadget",
+    "smartphone",
+    "laptop",
+  ],
+
+  authors: [
+    {
+      name: "Rexlicky Verdhika Sagatha",
+    },
+  ],
 };
 
 export default function RootLayout({ children }) {
