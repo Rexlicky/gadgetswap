@@ -1,4 +1,5 @@
 import SellerStats from "@/components/seller/SellerStats";
+import SellerListings from "@/components/seller/SellerListings";
 
 export default function SellerPage() {
   return (
@@ -14,6 +15,7 @@ export default function SellerPage() {
           </p>
         </div>
         <SellerStats />
+        <SellerListings />
       </div>
     </main>
   );
