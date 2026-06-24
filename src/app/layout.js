@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import FloatingParticles from "@/components/FloatingParticles";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-full bg-black text-white">
         <Navbar />
 
+        <FloatingParticles />
         {children}
       </body>
     </html>

@@ -11,7 +11,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="page-transition relative min-h-screen overflow-hidden bg-black text-white">
+    <main className="page-transition relative z-10 min-h-screen overflow-hidden bg-black text-white">
       {/* =========================
           AURORA BACKGROUND
       ========================== */}

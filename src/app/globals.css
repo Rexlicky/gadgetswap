@@ -73,3 +73,72 @@ body {
 .page-transition {
   animation: pageFade 0.8s ease;
 }
+
+/* =========================
+   FLOATING PARTICLES
+========================= */
+
+@keyframes floatParticle {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-40px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.particle {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(50px);
+  animation: floatParticle 8s ease-in-out infinite;
+}
+
+.particle-1 {
+  width: 180px;
+  height: 180px;
+  background: rgba(34, 211, 238, 0.12);
+  top: 10%;
+  left: 5%;
+}
+
+.particle-2 {
+  width: 250px;
+  height: 250px;
+  background: rgba(139, 92, 246, 0.12);
+  top: 30%;
+  right: 10%;
+  animation-delay: 1s;
+}
+
+.particle-3 {
+  width: 160px;
+  height: 160px;
+  background: rgba(34, 211, 238, 0.08);
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 2s;
+}
+
+.particle-4 {
+  width: 220px;
+  height: 220px;
+  background: rgba(139, 92, 246, 0.08);
+  bottom: 5%;
+  right: 15%;
+  animation-delay: 3s;
+}
+
+.particle-5 {
+  width: 120px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.04);
+  top: 50%;
+  left: 50%;
+  animation-delay: 4s;
+}
