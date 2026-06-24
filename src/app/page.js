@@ -12,7 +12,6 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-black text-white">
-
       {/* =========================
           AURORA BACKGROUND
       ========================== */}
@@ -30,19 +29,29 @@ export default function Home() {
       <section className="relative z-10 px-6 pt-32">
         <div className="mx-auto max-w-6xl text-center">
           {/* Hero */}
-          <Hero />
+          <div className="reveal-up">
+            <Hero />
+          </div>
 
           {/* Fitur Utama */}
-          <FeatureCards />
+          <div className="reveal-up">
+            <FeatureCards />
+          </div>
 
           {/* Mockup Gadget */}
-          <GadgetMockup />
+          <div className="reveal-up">
+            <GadgetMockup />
+          </div>
 
           {/* Statistik */}
-          <Statistics />
+          <div className="reveal-up">
+            <Statistics />
+          </div>
 
           {/* Produk Unggulan */}
-          <FeaturedGadgets />
+          <div className="reveal-up">
+            <FeaturedGadgets />
+          </div>
 
           {/* Alur Rekber */}
           <EscrowTimeline />
