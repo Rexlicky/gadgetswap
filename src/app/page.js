@@ -8,6 +8,7 @@ import EscrowTimeline from "@/components/EscrowTimeline";
 import CodPlanner from "@/components/CodPlanner";
 import ConditionScore from "@/components/ConditionScore";
 import Footer from "@/components/Footer";
+import FAQ from "@/components/FAQ";
 
 export default function Home() {
   return (
@@ -61,6 +62,8 @@ export default function Home() {
 
           {/* Skor Kondisi */}
           <ConditionScore />
+
+          <FAQ />
         </div>
       </section>
       <Footer />
