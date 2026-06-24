@@ -1,4 +1,10 @@
+"use client";
+
+import { useState } from "react";
+
 export default function FAQ() {
+  const [activeIndex, setActiveIndex] = useState(null);
+
   const faqs = [
     {
       question: "Apa itu sistem rekber?",
@@ -30,14 +36,27 @@ export default function FAQ() {
         <h2 className="mt-3 text-center text-5xl font-bold">FAQ</h2>
 
         <div className="mt-12 space-y-4">
-          {faqs.map((faq) => (
+          {faqs.map((faq, index) => (
             <div
               key={faq.question}
-              className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-xl"
+              className="rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-xl"
             >
-              <h3 className="font-semibold">{faq.question}</h3>
+              <button
+                onClick={() =>
+                  setActiveIndex(activeIndex === index ? null : index)
+                }
+                className="flex w-full items-center justify-between p-6 text-left"
+              >
+                <span className="font-semibold">{faq.question}</span>
 
-              <p className="mt-3 text-white/60">{faq.answer}</p>
+                <span className="text-cyan-400">
+                  {activeIndex === index ? "−" : "+"}
+                </span>
+              </button>
+
+              {activeIndex === index && (
+                <div className="px-6 pb-6 text-white/60">{faq.answer}</div>
+              )}
             </div>
           ))}
         </div>
