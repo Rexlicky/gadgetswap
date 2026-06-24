@@ -5,7 +5,7 @@ import EscrowActions from "@/components/escrow/EscrowActions";
 
 export default function EscrowPage() {
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="page-transition min-h-screen bg-black text-white">
       <div className="mx-auto max-w-6xl px-6 py-32">
         <div className="mb-12">
           <p className="text-cyan-400">Dashboard Rekber</p>

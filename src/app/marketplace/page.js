@@ -4,7 +4,7 @@ import ProductGrid from "@/components/marketplace/ProductGrid";
 
 export default function MarketplacePage() {
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="page-transition min-h-screen bg-black text-white">
       <div className="mx-auto max-w-7xl px-6 py-32">
         {/* Header */}
         <div className="mb-12">

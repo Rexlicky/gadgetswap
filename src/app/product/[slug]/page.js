@@ -7,7 +7,7 @@ export default async function ProductDetailPage({ params }) {
 
   if (!product) {
     return (
-      <main className="min-h-screen bg-black text-white flex items-center justify-center">
+      <main className="page-transition min-h-screen bg-black text-white flex items-center justify-center">
         Produk tidak ditemukan.
       </main>
     );

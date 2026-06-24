@@ -57,3 +57,19 @@ body {
     0 0 20px rgba(34, 211, 238, 0.4),
     0 0 40px rgba(139, 92, 246, 0.3);
 }
+
+@keyframes pageFade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-transition {
+  animation: pageFade 0.8s ease;
+}

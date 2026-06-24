@@ -2,7 +2,7 @@ import SellForm from "@/components/sell/SellForm";
 
 export default function SellPage() {
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className="page-transition min-h-screen bg-black text-white">
       <div className="mx-auto max-w-5xl px-6 py-32">
         {/* Header */}
         <div className="mb-12 text-center">
