@@ -142,3 +142,17 @@ body {
   left: 50%;
   animation-delay: 4s;
 }
+
+body[data-theme="purple"] {
+  background: #0b0614;
+}
+
+body[data-theme="purple"] .particle-1,
+body[data-theme="purple"] .particle-3 {
+  background: rgba(168, 85, 247, 0.15);
+}
+
+body[data-theme="purple"] .particle-2,
+body[data-theme="purple"] .particle-4 {
+  background: rgba(236, 72, 153, 0.12);
+}

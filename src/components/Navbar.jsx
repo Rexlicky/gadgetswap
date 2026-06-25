@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -43,7 +44,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden gap-8 text-sm md:flex">
+        <div className="hidden items-center gap-8 text-sm md:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -57,6 +58,7 @@ export default function Navbar() {
               {item.name}
             </Link>
           ))}
+          <ThemeToggle />
         </div>
 
         {/* Mobile Button */}
