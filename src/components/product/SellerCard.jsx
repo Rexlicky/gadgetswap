@@ -23,6 +23,20 @@ export default function SellerCard() {
         </div>
       </div>
 
+      <div className="mt-5 flex flex-wrap gap-2">
+        <span className="rounded-full border border-yellow-400/20 bg-yellow-500/10 px-3 py-1 text-xs text-yellow-300">
+          🏆 Top Seller
+        </span>
+
+        <span className="rounded-full border border-cyan-400/20 bg-cyan-500/10 px-3 py-1 text-xs text-cyan-300">
+          ⚡ Fast Response
+        </span>
+
+        <span className="rounded-full border border-green-400/20 bg-green-500/10 px-3 py-1 text-xs text-green-300">
+          🛡️ Rekber Trusted
+        </span>
+      </div>
+
       <div className="mt-6 grid grid-cols-3 gap-4">
         <div>
           <p className="text-sm text-white/50">Rating</p>
