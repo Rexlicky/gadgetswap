@@ -2,7 +2,7 @@ export default function CategoryFilters({
   selectedCategory,
   setSelectedCategory,
 }) {
-  const categories = ["Semua", "Smartphone", "Laptop", "Tablet", "Gaming"];
+  const categories = ["Semua", "iPhone", "Android", "Laptop", "iPad"];
 
   return (
     <div className="mb-10 flex flex-wrap gap-3">
