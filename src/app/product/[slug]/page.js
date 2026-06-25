@@ -8,6 +8,7 @@ import RecentlyViewed from "@/components/product/RecentlyViewed";
 import ProductActions from "@/components/product/ProductActions";
 import SellerCard from "@/components/product/SellerCard";
 import TrustIndicators from "@/components/product/TrustIndicators";
+import ProductSpecifications from "@/components/product/ProductSpecifications";
 
 export default async function ProductDetailPage({ params }) {
   const { slug } = await params;
@@ -45,6 +46,8 @@ export default async function ProductDetailPage({ params }) {
           <SellerCard />
 
           <TrustIndicators />
+
+          <ProductSpecifications />
 
           <div className="mt-8 grid grid-cols-2 gap-4">
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
