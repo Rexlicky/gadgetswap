@@ -33,7 +33,14 @@ export default function MarketplacePage() {
 
         <SortDropdown sortBy={sortBy} setSortBy={setSortBy} />
 
-        <ProductGrid selectedCategory={selectedCategory} sortBy={sortBy} />
+        <ProductGrid
+          selectedCategory={selectedCategory}
+          sortBy={sortBy}
+          resetFilters={() => {
+            setSelectedCategory("Semua");
+            setSortBy("default");
+          }}
+        />
       </div>
     </main>
   );

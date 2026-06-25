@@ -1,7 +1,11 @@
 import ProductCard from "./ProductCard";
 import { products } from "@/data/products";
 
-export default function ProductGrid({ selectedCategory, sortBy }) {
+export default function ProductGrid({
+  selectedCategory,
+  sortBy,
+  resetFilters,
+}) {
   const filteredProducts =
     selectedCategory === "Semua"
       ? products
@@ -44,8 +48,8 @@ export default function ProductGrid({ selectedCategory, sortBy }) {
 
       {/* Product Grid */}
       {sortedProducts.length === 0 ? (
-  <div
-    className="
+        <div
+          className="
       flex
       flex-col
       items-center
@@ -57,23 +61,38 @@ export default function ProductGrid({ selectedCategory, sortBy }) {
       py-20
       text-center
     "
-  >
-    <div className="mb-4 text-6xl">🔍</div>
+        >
+          <div className="mb-4 text-6xl">🔍</div>
 
-    <h3 className="text-2xl font-semibold">
-      Produk Tidak Ditemukan
-    </h3>
+          <h3 className="text-2xl font-semibold">Produk Tidak Ditemukan</h3>
 
-    <p className="mt-3 max-w-md text-white/50">
-      Coba gunakan kata kunci lain atau pilih kategori
-      yang berbeda.
-    </p>
-  </div>
-) : (
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {sortedProducts.map((product) => (
-          <ProductCard key={product.name} {...product} />
-        ))}
+          <p className="mt-3 max-w-md text-white/50">
+            Coba gunakan kata kunci lain atau pilih kategori yang berbeda.
+          </p>
+          <button
+            onClick={resetFilters}
+            className="
+    mt-6
+    rounded-full
+    border
+    border-cyan-400/30
+    bg-cyan-500/10
+    px-6
+    py-3
+    text-sm
+    text-cyan-300
+    transition
+    hover:bg-cyan-500/20
+  "
+          >
+            Lihat Semua Produk
+          </button>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {sortedProducts.map((product) => (
+            <ProductCard key={product.name} {...product} />
+          ))}
         </div>
       )}
     </>
