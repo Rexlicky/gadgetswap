@@ -1,4 +1,5 @@
 import Link from "next/link";
+import MagneticButton from "./MagneticButton";
 
 export default function CallToAction() {
   return (
@@ -17,19 +18,23 @@ export default function CallToAction() {
           </p>
 
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-            <Link
-              href="/marketplace"
-              className="rounded-full bg-white px-8 py-4 font-semibold text-black transition hover:scale-105"
-            >
-              Lihat Katalog
-            </Link>
+            <MagneticButton>
+              <Link
+                href="/marketplace"
+                className="rounded-full bg-white px-8 py-4 font-semibold text-black transition hover:scale-105"
+              >
+                Lihat Katalog
+              </Link>
+            </MagneticButton>
 
+            <MagneticButton>
             <Link
               href="/sell"
               className="rounded-full border border-white/10 px-8 py-4 font-semibold transition hover:border-cyan-400 hover:text-cyan-400"
             >
               Jual Gadget
-            </Link>
+              </Link>
+            </MagneticButton>
           </div>
         </div>
       </div>
