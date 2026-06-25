@@ -1,5 +1,6 @@
 import { products } from "@/data/products";
 import ProductBreadcrumb from "@/components/product/ProductBreadcrumb";
+import RelatedProducts from "@/components/product/RelatedProducts";
 
 export default async function ProductDetailPage({ params }) {
   const { slug } = await params;
@@ -52,6 +53,10 @@ export default async function ProductDetailPage({ params }) {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="mx-auto max-w-7xl px-6 pb-24">
+        <RelatedProducts currentProduct={product} />
       </div>
     </main>
   );
