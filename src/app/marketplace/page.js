@@ -1,12 +1,16 @@
+"use client";
+
+import { useState } from "react";
 import SearchBar from "@/components/marketplace/SearchBar";
 import CategoryFilters from "@/components/marketplace/CategoryFilters";
 import ProductGrid from "@/components/marketplace/ProductGrid";
 
 export default function MarketplacePage() {
+  const [selectedCategory, setSelectedCategory] = useState("Semua");
+
   return (
     <main className="page-transition min-h-screen bg-black text-white">
       <div className="mx-auto max-w-7xl px-6 py-32">
-        {/* Header */}
         <div className="mb-12">
           <p className="text-cyan-400">Marketplace Gadget</p>
 
@@ -18,14 +22,14 @@ export default function MarketplacePage() {
           </p>
         </div>
 
-        {/* Search */}
         <SearchBar />
 
-        {/* Filter */}
-        <CategoryFilters />
+        <CategoryFilters
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+        />
 
-        {/* Product Grid */}
-        <ProductGrid />
+        <ProductGrid selectedCategory={selectedCategory} />
       </div>
     </main>
   );
