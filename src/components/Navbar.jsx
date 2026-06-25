@@ -58,7 +58,12 @@ export default function Navbar() {
               {item.name}
             </Link>
           ))}
+
           <ThemeToggle />
+
+          <div className="hidden items-center gap-2 rounded-full border border-white/10 px-3 py-2 text-xs text-white/50 lg:flex">
+            ⌘<span>Ctrl + K</span>
+          </div>
         </div>
 
         {/* Mobile Button */}

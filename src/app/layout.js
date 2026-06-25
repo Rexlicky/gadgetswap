@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import FloatingParticles from "@/components/FloatingParticles";
 import ScrollToTop from "@/components/ScrollToTop";
 import Footer from "@/components/Footer";
+import CommandPalette from "@/components/CommandPalette";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -52,6 +53,8 @@ export default function RootLayout({ children }) {
         <FloatingParticles />
 
         {children}
+
+        <CommandPalette />
 
         <ScrollToTop />
 
