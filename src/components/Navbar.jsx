@@ -74,13 +74,34 @@ export default function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              className={`transition ${
-                pathname === item.href
-                  ? "text-cyan-400"
-                  : "text-white/80 hover:text-cyan-400"
-              }`}
+              className={`
+    relative
+    transition
+    ${
+      pathname === item.href
+        ? "text-cyan-400"
+        : "text-white/80 hover:text-cyan-400"
+    }
+  `}
             >
               {item.name}
+
+              {pathname === item.href && (
+                <span
+                  className="
+        absolute
+        -bottom-2
+        left-0
+        h-[3px]
+        w-full
+        rounded-full
+        bg-gradient-to-r
+        from-cyan-400
+        to-violet-500
+        shadow-[0_0_12px_rgba(34,211,238,0.8)]
+      "
+                />
+              )}
             </Link>
           ))}
 
