@@ -62,8 +62,43 @@ export default function Navbar() {
         {/* =========================
             Logo
         ========================= */}
-        <Link href="/" className="text-2xl font-bold">
-          GadgetSwap
+        <Link
+          href="/"
+          className="
+    group
+    relative
+    text-2xl
+    font-bold
+    transition-all
+    duration-300
+  "
+        >
+          <span
+            className="
+      bg-gradient-to-r
+      from-cyan-400
+      to-violet-500
+      bg-clip-text
+      text-transparent
+    "
+          >
+            GadgetSwap
+          </span>
+
+          <span
+            className="
+      absolute
+      inset-0
+      -z-10
+      rounded-full
+      opacity-0
+      blur-xl
+      transition-opacity
+      duration-300
+      group-hover:opacity-10
+      bg-cyan-400
+    "
+          />
         </Link>
 
         {/* =========================
