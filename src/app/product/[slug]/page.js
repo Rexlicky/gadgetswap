@@ -4,6 +4,7 @@ import RelatedProducts from "@/components/product/RelatedProducts";
 import ProductGallery from "@/components/product/ProductGallery";
 import ProductReviews from "@/components/product/ProductReviews";
 import ProductRatingSummary from "@/components/product/ProductRatingSummary";
+import RecentlyViewed from "@/components/product/RecentlyViewed";
 
 export default async function ProductDetailPage({ params }) {
   const { slug } = await params;
@@ -58,8 +59,10 @@ export default async function ProductDetailPage({ params }) {
 
       <div className="mx-auto max-w-7xl px-6 pb-24">
         <ProductRatingSummary />
-        
+
         <ProductReviews />
+
+        <RecentlyViewed currentProduct={product} />
 
         <RelatedProducts currentProduct={product} />
       </div>
