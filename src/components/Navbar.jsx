@@ -75,6 +75,7 @@ export default function Navbar() {
               key={item.href}
               href={item.href}
               className={`
+    group
     relative
     transition
     ${
@@ -85,6 +86,22 @@ export default function Navbar() {
   `}
             >
               {item.name}
+              {pathname !== item.href && (
+                <span
+                  className="
+      absolute
+      -bottom-2
+      left-0
+      h-[2px]
+      w-0
+      rounded-full
+      bg-gradient-to-r from-cyan-400 to-violet-500
+      transition-all
+      duration-300
+      group-hover:w-full
+    "
+                />
+              )}
 
               {pathname === item.href && (
                 <span
