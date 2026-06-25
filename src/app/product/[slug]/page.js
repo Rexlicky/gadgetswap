@@ -1,4 +1,5 @@
 import { products } from "@/data/products";
+import ProductBreadcrumb from "@/components/product/ProductBreadcrumb";
 
 export default async function ProductDetailPage({ params }) {
   const { slug } = await params;
@@ -23,6 +24,8 @@ export default async function ProductDetailPage({ params }) {
         </div>
 
         <div>
+          <ProductBreadcrumb productName={product.name} />
+
           <p className="text-cyan-400">{product.category}</p>
 
           <h1 className="mt-3 text-5xl font-bold">{product.name}</h1>
