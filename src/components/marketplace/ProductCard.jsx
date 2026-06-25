@@ -1,4 +1,6 @@
 import Link from "next/link";
+import WishlistButton from "./WishlistButton";
+
 export default function ProductCard({
   emoji,
   name,
@@ -10,7 +12,11 @@ export default function ProductCard({
     return (
       <Link href={`/product/${slug}`}>
         <div className="group cursor-pointer rounded-3xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-cyan-400/30 hover:shadow-lg hover:shadow-cyan-500/20">
-          <div className="mb-5 flex h-52 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-500/10 to-violet-500/10">
+          <div className="relative mb-5 flex h-52 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-500/10 to-violet-500/10">
+            <div className="absolute right-4 top-4">
+              <WishlistButton />
+            </div>
+
             <span className="text-7xl">{emoji}</span>
           </div>
 
