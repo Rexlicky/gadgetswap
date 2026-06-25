@@ -54,6 +54,27 @@ export default function CommandPalette() {
   return (
     <div className="fixed inset-0 z-[999] flex items-start justify-center bg-black/70 pt-32 backdrop-blur-sm">
       <div className="w-full max-w-xl rounded-3xl border border-white/10 bg-black p-4">
+        <div className="mb-4 flex items-center justify-between">
+          <h3 className="text-sm text-white/50">Pencarian Cepat</h3>
+
+          <button
+            onClick={() => setOpen(false)}
+            className="
+        rounded-full
+        border
+        border-white/10
+        px-3
+        py-1
+        text-sm
+        text-white/50
+        transition
+        hover:border-cyan-400/30
+        hover:text-white
+      "
+          >
+            ✕
+          </button>
+        </div>
         <input
           autoFocus
           type="text"

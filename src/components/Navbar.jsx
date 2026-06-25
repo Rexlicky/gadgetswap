@@ -181,7 +181,7 @@ export default function Navbar() {
               lg:flex
             "
           >
-            <span>🔍 Search...</span>
+            <span>Search...</span>
 
             <span
               className="
