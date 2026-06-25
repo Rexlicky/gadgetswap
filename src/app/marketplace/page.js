@@ -4,9 +4,11 @@ import { useState } from "react";
 import SearchBar from "@/components/marketplace/SearchBar";
 import CategoryFilters from "@/components/marketplace/CategoryFilters";
 import ProductGrid from "@/components/marketplace/ProductGrid";
+import SortDropdown from "@/components/marketplace/SortDropdown";
 
 export default function MarketplacePage() {
   const [selectedCategory, setSelectedCategory] = useState("Semua");
+  const [sortBy, setSortBy] = useState("default");
 
   return (
     <main className="page-transition min-h-screen bg-black text-white">
@@ -29,7 +31,9 @@ export default function MarketplacePage() {
           setSelectedCategory={setSelectedCategory}
         />
 
-        <ProductGrid selectedCategory={selectedCategory} />
+        <SortDropdown sortBy={sortBy} setSortBy={setSortBy} />
+
+        <ProductGrid selectedCategory={selectedCategory} sortBy={sortBy} />
       </div>
     </main>
   );
