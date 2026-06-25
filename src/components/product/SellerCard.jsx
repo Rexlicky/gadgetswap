@@ -9,7 +9,17 @@ export default function SellerCard() {
         <div>
           <h3 className="font-semibold text-lg">Gadget Store Official</h3>
 
-          <p className="text-sm text-white/50">Penjual Terverifikasi</p>
+          <div className="mt-1 flex items-center gap-2">
+            <div className="h-2 w-2 animate-pulse rounded-full bg-green-400" />
+
+            <span className="text-sm text-green-400">Online</span>
+          </div>
+
+          <p className="mt-1 text-sm text-white/50">Penjual Terverifikasi</p>
+
+          <p className="mt-1 text-xs text-cyan-400">
+            Membalas dalam &lt; 5 menit
+          </p>
         </div>
       </div>
 
