@@ -1,6 +1,7 @@
 import { products } from "@/data/products";
 import ProductBreadcrumb from "@/components/product/ProductBreadcrumb";
 import RelatedProducts from "@/components/product/RelatedProducts";
+import ProductGallery from "@/components/product/ProductGallery";
 
 export default async function ProductDetailPage({ params }) {
   const { slug } = await params;
@@ -19,9 +20,7 @@ export default async function ProductDetailPage({ params }) {
     <main className="min-h-screen bg-black text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-32 lg:grid-cols-2">
         <div className="rounded-[2rem] border border-white/10 bg-white/[0.04] p-8 backdrop-blur-xl">
-          <div className="flex h-[420px] items-center justify-center rounded-[1.5rem] bg-gradient-to-br from-cyan-500/10 to-violet-500/10">
-            <span className="text-9xl">{product.emoji}</span>
-          </div>
+          <ProductGallery emoji={product.emoji} />
         </div>
 
         <div>
