@@ -62,6 +62,9 @@ export default function Navbar() {
           <ThemeToggle />
 
           <button
+            onClick={() =>
+              window.dispatchEvent(new Event("open-command-palette"))
+            }
             className="
     hidden
     items-center

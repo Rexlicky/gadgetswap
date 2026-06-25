@@ -4,7 +4,17 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function CommandPalette() {
-  const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(false);
+    useEffect(() => {
+      const openPalette = () => {
+        setOpen(true);
+      };
+
+      window.addEventListener("open-command-palette", openPalette);
+
+      return () =>
+        window.removeEventListener("open-command-palette", openPalette);
+    }, []);
   const [query, setQuery] = useState("");
 
   const router = useRouter();
