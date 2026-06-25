@@ -6,6 +6,7 @@ import ProductReviews from "@/components/product/ProductReviews";
 import ProductRatingSummary from "@/components/product/ProductRatingSummary";
 import RecentlyViewed from "@/components/product/RecentlyViewed";
 import ProductActions from "@/components/product/ProductActions";
+import SellerCard from "@/components/product/SellerCard";
 
 export default async function ProductDetailPage({ params }) {
   const { slug } = await params;
@@ -39,6 +40,8 @@ export default async function ProductDetailPage({ params }) {
           <p className="mt-6 leading-7 text-white/60">{product.description}</p>
 
           <ProductActions />
+
+          <SellerCard />
 
           <div className="mt-8 grid grid-cols-2 gap-4">
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
