@@ -4,12 +4,19 @@ import { products } from "@/data/products";
 export default function ProductGrid({
   selectedCategory,
   sortBy,
+  searchQuery,
   resetFilters,
 }) {
-  const filteredProducts =
-    selectedCategory === "Semua"
-      ? products
-      : products.filter((product) => product.category === selectedCategory);
+  const filteredProducts = products.filter((product) => {
+    const matchCategory =
+      selectedCategory === "Semua" || product.category === selectedCategory;
+
+    const matchSearch = product.name
+      .toLowerCase()
+      .includes(searchQuery.toLowerCase());
+
+    return matchCategory && matchSearch;
+  });
 
   const sortedProducts = [...filteredProducts];
 

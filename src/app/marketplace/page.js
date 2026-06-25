@@ -9,6 +9,7 @@ import SortDropdown from "@/components/marketplace/SortDropdown";
 export default function MarketplacePage() {
   const [selectedCategory, setSelectedCategory] = useState("Semua");
   const [sortBy, setSortBy] = useState("default");
+  const [searchQuery, setSearchQuery] = useState("");
 
   return (
     <main className="page-transition min-h-screen bg-black text-white">
@@ -24,7 +25,7 @@ export default function MarketplacePage() {
           </p>
         </div>
 
-        <SearchBar />
+        <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
 
         <CategoryFilters
           selectedCategory={selectedCategory}
@@ -36,9 +37,11 @@ export default function MarketplacePage() {
         <ProductGrid
           selectedCategory={selectedCategory}
           sortBy={sortBy}
+          searchQuery={searchQuery}
           resetFilters={() => {
             setSelectedCategory("Semua");
             setSortBy("default");
+            setSearchQuery("");
           }}
         />
       </div>
