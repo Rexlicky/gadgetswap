@@ -31,21 +31,22 @@ export default function ProductGrid({ selectedCategory, sortBy }) {
 
   return (
     <>
-  <div className="mb-6 flex items-center justify-between">
-    <div>
-      <h3 className="text-xl font-semibold">
-        {selectedCategory}
-      </h3>
+      {/* Product Counter */}
+      <div className="mb-6 flex items-center justify-between">
+        <div>
+          <h3 className="text-xl font-semibold">{selectedCategory}</h3>
 
-      <p className="mt-1 text-sm text-white/50">
-        {sortedProducts.length} Produk Ditemukan
-      </p>
-    </div>
-  </div>
-    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-      {sortedProducts.map((product) => (
-        <ProductCard key={product.name} {...product} />
-      ))}
+          <p className="mt-1 text-sm text-white/50">
+            {sortedProducts.length} Produk Ditemukan
+          </p>
+        </div>
+      </div>
+
+      {/* Product Grid */}
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {sortedProducts.map((product) => (
+          <ProductCard key={product.name} {...product} />
+        ))}
       </div>
     </>
   );
