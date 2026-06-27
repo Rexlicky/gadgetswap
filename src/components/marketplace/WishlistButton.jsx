@@ -2,18 +2,27 @@
 
 import { useState } from "react";
 import Toast from "@/components/Toast";
+import { useWishlist } from "@/context/WishlistContext";
 
 export default function WishlistButton() {
   const [liked, setLiked] = useState(false);
+  const { wishlistCount, setWishlistCount } = useWishlist();
   const [toast, setToast] = useState("");
 
   function handleWishlist(e) {
     e.preventDefault();
 
     const nextLiked = !liked;
+
     setLiked(nextLiked);
 
-    setToast(nextLiked ? "Ditambahkan ke wishlist" : "Dihapus dari wishlist");
+    if (nextLiked) {
+      setWishlistCount((prev) => prev + 1);
+      setToast("Ditambahkan ke wishlist");
+    } else {
+      setWishlistCount((prev) => Math.max(0, prev - 1));
+      setToast("Dihapus dari wishlist");
+    }
 
     setTimeout(() => {
       setToast("");

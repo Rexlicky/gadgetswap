@@ -5,6 +5,7 @@ import FloatingParticles from "@/components/FloatingParticles";
 import ScrollToTop from "@/components/ScrollToTop";
 import Footer from "@/components/Footer";
 import CommandPalette from "@/components/CommandPalette";
+import { WishlistProvider } from "@/context/WishlistContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -48,6 +49,7 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-black text-white">
+        <WishlistProvider>
         <Navbar />
 
         <FloatingParticles />
@@ -59,6 +61,8 @@ export default function RootLayout({ children }) {
         <ScrollToTop />
 
         <Footer />
+          
+        </WishlistProvider>
       </body>
     </html>
   );

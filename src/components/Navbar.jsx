@@ -4,10 +4,12 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import ThemeToggle from "./ThemeToggle";
+import { useWishlist } from "@/context/WishlistContext";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { wishlistCount } = useWishlist();
 
   const pathname = usePathname();
 
@@ -158,6 +160,32 @@ export default function Navbar() {
           ))}
 
           <ThemeToggle />
+
+          <div className="relative">
+            <button className="text-xl transition hover:scale-110">🤍</button>
+
+            {wishlistCount > 0 && (
+              <span
+                className="
+        absolute
+        -right-2
+        -top-2
+        flex
+        h-5
+        w-5
+        items-center
+        justify-center
+        rounded-full
+        bg-red-500
+        text-[10px]
+        font-bold
+        text-white
+      "
+              >
+                {wishlistCount}
+              </span>
+            )}
+          </div>
 
           <button
             onClick={() =>
