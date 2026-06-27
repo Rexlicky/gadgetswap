@@ -161,7 +161,7 @@ export default function Navbar() {
 
           <ThemeToggle />
 
-          <div className="relative">
+          <Link href="/wishlist" className="relative">
             <button className="text-xl transition hover:scale-110">🤍</button>
 
             {wishlistCount > 0 && (
@@ -185,7 +185,7 @@ export default function Navbar() {
                 {wishlistCount}
               </span>
             )}
-          </div>
+          </Link>
 
           <button
             onClick={() =>
