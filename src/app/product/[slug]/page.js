@@ -1,4 +1,4 @@
-import { products } from "@/data/products";
+import { prisma } from "@/lib/prisma";
 import ProductBreadcrumb from "@/components/product/ProductBreadcrumb";
 import RelatedProducts from "@/components/product/RelatedProducts";
 import ProductGallery from "@/components/product/ProductGallery";
@@ -17,7 +17,11 @@ import ProductFAQ from "@/components/product/ProductFAQ";
 export default async function ProductDetailPage({ params }) {
   const { slug } = await params;
 
-  const product = products.find((item) => item.slug === slug);
+  const product = await prisma.product.findUnique({
+    where: {
+      slug,
+    },
+  });
 
   if (!product) {
     return (
@@ -41,7 +45,13 @@ export default async function ProductDetailPage({ params }) {
 
           <h1 className="mt-3 text-5xl font-bold">{product.name}</h1>
 
-          <p className="mt-4 text-3xl font-bold">{product.price}</p>
+          <p className="mt-4 text-3xl font-bold">
+            {new Intl.NumberFormat("id-ID", {
+              style: "currency",
+              currency: "IDR",
+              maximumFractionDigits: 0,
+            }).format(product.price)}
+          </p>
 
           <p className="mt-6 leading-7 text-white/60">{product.description}</p>
 
