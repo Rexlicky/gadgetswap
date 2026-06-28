@@ -50,18 +50,9 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-full bg-black text-white">
       <WishlistProvider>
-        <Navbar />
-
-        <FloatingParticles />
-
+  
         {children}
 
-        <CommandPalette />
-
-        <ScrollToTop />
-
-        <Footer />
-          
       </WishlistProvider>
       </body>
     </html>
