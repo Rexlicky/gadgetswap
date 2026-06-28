@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SearchBar from "@/components/marketplace/SearchBar";
 import CategoryFilters from "@/components/marketplace/CategoryFilters";
 import ProductGrid from "@/components/marketplace/ProductGrid";
@@ -10,6 +10,25 @@ export default function MarketplacePage() {
   const [selectedCategory, setSelectedCategory] = useState("Semua");
   const [sortBy, setSortBy] = useState("default");
   const [searchQuery, setSearchQuery] = useState("");
+  const [products, setProducts] = useState([]);
+  const [loadingProducts, setLoadingProducts] = useState(true);
+
+  useEffect(() => {
+    async function fetchProducts() {
+      try {
+        const response = await fetch("/api/products");
+        const data = await response.json();
+
+        setProducts(data);
+      } catch (error) {
+        console.error("Gagal mengambil produk:", error);
+      } finally {
+        setLoadingProducts(false);
+      }
+    }
+
+    fetchProducts();
+  }, []);
 
   return (
     <main className="page-transition min-h-screen bg-black text-white">
@@ -34,16 +53,23 @@ export default function MarketplacePage() {
 
         <SortDropdown sortBy={sortBy} setSortBy={setSortBy} />
 
-        <ProductGrid
-          selectedCategory={selectedCategory}
-          sortBy={sortBy}
-          searchQuery={searchQuery}
-          resetFilters={() => {
-            setSelectedCategory("Semua");
-            setSortBy("default");
-            setSearchQuery("");
-          }}
-        />
+        {loadingProducts ? (
+          <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-10 text-center text-white/50">
+            Memuat produk...
+          </div>
+        ) : (
+          <ProductGrid
+            products={products}
+            selectedCategory={selectedCategory}
+            sortBy={sortBy}
+            searchQuery={searchQuery}
+            resetFilters={() => {
+              setSelectedCategory("Semua");
+              setSortBy("default");
+              setSearchQuery("");
+            }}
+          />
+        )}
       </div>
     </main>
   );

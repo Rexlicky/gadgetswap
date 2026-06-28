@@ -1,7 +1,7 @@
 import ProductCard from "./ProductCard";
-import { products } from "@/data/products";
 
 export default function ProductGrid({
+  products,
   selectedCategory,
   sortBy,
   searchQuery,
@@ -21,19 +21,11 @@ export default function ProductGrid({
   const sortedProducts = [...filteredProducts];
 
   if (sortBy === "lowest-price") {
-    sortedProducts.sort(
-      (a, b) =>
-        parseInt(a.price.replace(/[^\d]/g, "")) -
-        parseInt(b.price.replace(/[^\d]/g, "")),
-    );
+    sortedProducts.sort((a, b) => a.price - b.price);
   }
 
   if (sortBy === "highest-price") {
-    sortedProducts.sort(
-      (a, b) =>
-        parseInt(b.price.replace(/[^\d]/g, "")) -
-        parseInt(a.price.replace(/[^\d]/g, "")),
-    );
+    sortedProducts.sort((a, b) => b.price - a.price);
   }
 
   if (sortBy === "highest-score") {

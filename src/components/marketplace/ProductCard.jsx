@@ -28,7 +28,13 @@ export default function ProductCard({
             </span>
           </div>
 
-          <p className="mt-3 text-xl font-bold">{price}</p>
+          <p className="mt-3 text-xl font-bold">
+            {new Intl.NumberFormat("id-ID", {
+              style: "currency",
+              currency: "IDR",
+              maximumFractionDigits: 0,
+            }).format(price)}
+          </p>
 
           <p className="mt-2 text-sm text-white/50">{badge}</p>
         </div>
