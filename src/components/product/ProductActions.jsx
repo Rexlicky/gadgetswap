@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function ProductActions() {
   return (
     <div className="mt-8 grid gap-4 sm:grid-cols-3">
@@ -18,21 +20,24 @@ export default function ProductActions() {
         💬 Chat Penjual
       </button>
 
-      <button
+      <Link
+        href="/checkout"
         className="
-          rounded-2xl
-          border
-          border-white/10
-          bg-white/[0.04]
-          px-6
-          py-4
-          font-medium
-          transition
-          hover:border-cyan-400/30
-        "
+    rounded-2xl
+    bg-gradient-to-r
+    from-cyan-500
+    to-violet-500
+    px-6
+    py-4
+    text-center
+    font-medium
+    text-white
+    transition
+    hover:scale-[1.02]
+  "
       >
-        🤝 Atur COD
-      </button>
+        🛡️ Beli dengan Rekber
+      </Link>
 
       <button
         className="
