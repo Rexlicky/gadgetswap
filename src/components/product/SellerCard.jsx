@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function SellerCard() {
   return (
     <div className="mt-10 rounded-3xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-xl">
@@ -57,22 +59,25 @@ export default function SellerCard() {
         </div>
       </div>
 
-      <button
+      <Link
+        href="/seller/profile"
         className="
-          mt-6
-          w-full
-          rounded-2xl
-          border
-          border-cyan-400/20
-          bg-cyan-500/10
-          py-3
-          text-cyan-300
-          transition
-          hover:bg-cyan-500/20
-        "
+    mt-6
+    block
+    w-full
+    rounded-2xl
+    border
+    border-cyan-400/20
+    bg-cyan-500/10
+    py-3
+    text-center
+    text-cyan-300
+    transition
+    hover:bg-cyan-500/20
+  "
       >
         Lihat Profil Penjual
-      </button>
+      </Link>
     </div>
   );
 }
