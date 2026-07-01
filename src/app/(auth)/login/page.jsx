@@ -19,7 +19,7 @@ export default function LoginPage() {
     toast.success("Selamat datang kembali! 👋");
 
     setTimeout(() => {
-      router.push("/marketplace");
+      router.push("/");
     }, 800);
   }
 
