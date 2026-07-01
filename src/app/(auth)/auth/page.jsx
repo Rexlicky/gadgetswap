@@ -11,7 +11,7 @@ export default function AuthPage() {
   const router = useRouter();
   const [mode, setMode] = useState("login");
 
-  async function handleSubmit(email, password) {
+  async function handleSubmit({ fullName, phone, email, password }) {
     if (mode === "login") {
       const { error } = await signIn(email, password);
 
@@ -29,7 +29,10 @@ export default function AuthPage() {
       return;
     }
 
-    const { error } = await signUp(email, password);
+    const { error } = await signUp(email, password, {
+      fullName,
+      phone,
+    });
 
     if (error) {
       toast.error(error.message);
@@ -46,7 +49,8 @@ export default function AuthPage() {
   return (
     <AuthLayout mode={mode} setMode={setMode}>
       <AuthForm
-        buttonText={mode === "login" ? "Masuk" : "Daftar"}
+        mode={mode}
+        buttonText={mode === "login" ? "Masuk" : "Buat Akun"}
         onSubmit={handleSubmit}
       />
     </AuthLayout>

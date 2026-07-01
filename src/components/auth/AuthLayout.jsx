@@ -18,7 +18,7 @@ export default function AuthLayout({ children, mode, setMode }) {
           </div>
 
           <h1 className="text-5xl font-light tracking-tight">
-            {mode === "login" ? "Welcome back!" : "Create account"}
+            {mode === "login" ? "Welcome to GadgetSwap" : "Create account"}
           </h1>
 
           <p className="mt-4 text-sm leading-6 text-white/60">

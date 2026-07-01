@@ -1,9 +1,12 @@
 import { supabase } from "@/lib/supabase/client";
 
-export async function signUp(email, password) {
+export async function signUp(email, password, metadata = {}) {
   return await supabase.auth.signUp({
     email,
     password,
+    options: {
+      data: metadata,
+    },
   });
 }
 
