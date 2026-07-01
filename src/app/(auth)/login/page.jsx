@@ -2,8 +2,11 @@
 
 import AuthForm from "@/components/auth/AuthForm";
 import { signIn } from "@/services/auth/auth.service";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
+  const router = useRouter();
+  
   async function handleLogin(email, password) {
     const { error } = await signIn(email, password);
 
@@ -12,7 +15,7 @@ export default function LoginPage() {
       return;
     }
 
-    alert("Login berhasil 🎉");
+    router.push("/marketplace");
   }
 
   return (

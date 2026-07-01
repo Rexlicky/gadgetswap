@@ -2,8 +2,11 @@
 
 import AuthForm from "@/components/auth/AuthForm";
 import { signUp } from "@/services/auth/auth.service";
+import { useRouter } from "next/navigation";
 
 export default function RegisterPage() {
+  const router = useRouter();
+  
   async function handleRegister(email, password) {
     const { error } = await signUp(email, password);
 
@@ -12,7 +15,9 @@ export default function RegisterPage() {
       return;
     }
 
-    alert("Cek email untuk verifikasi 🎉");
+    alert("Registrasi berhasil! Silakan cek email untuk verifikasi.");
+
+    router.push("/login");
   }
 
   return (
