@@ -156,3 +156,26 @@ body[data-theme="purple"] .particle-2,
 body[data-theme="purple"] .particle-4 {
   background: rgba(236, 72, 153, 0.12);
 }
+
+/* Chrome Autofill */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: #fff !important;
+  caret-color: #fff;
+
+  transition: background-color 999999s ease-in-out 0s;
+}
+
+/* Hilangkan icon password bawaan Edge */
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+/* Hilangkan icon password bawaan Chrome (Edge) */
+input::-webkit-credentials-auto-fill-button,
+input::-webkit-password-toggle-button {
+  display: none !important;
+}
