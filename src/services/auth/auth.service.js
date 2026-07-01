@@ -33,3 +33,7 @@ export async function getSession() {
 
   return session;
 }
+
+export async function getCurrentSession() {
+  return await supabase.auth.getSession();
+}
