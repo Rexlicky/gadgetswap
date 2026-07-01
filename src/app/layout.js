@@ -1,11 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import FloatingParticles from "@/components/FloatingParticles";
-import ScrollToTop from "@/components/ScrollToTop";
-import Footer from "@/components/Footer";
-import CommandPalette from "@/components/CommandPalette";
 import { WishlistProvider } from "@/context/WishlistContext";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -49,11 +45,11 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-black text-white">
-      <WishlistProvider>
-  
-        {children}
+        <WishlistProvider>
+          {children}
 
-      </WishlistProvider>
+          <Toaster position="top-right" richColors closeButton />
+        </WishlistProvider>
       </body>
     </html>
   );

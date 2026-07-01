@@ -3,19 +3,24 @@
 import AuthForm from "@/components/auth/AuthForm";
 import { signIn } from "@/services/auth/auth.service";
 import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 export default function LoginPage() {
   const router = useRouter();
-  
+
   async function handleLogin(email, password) {
     const { error } = await signIn(email, password);
 
     if (error) {
-      alert(error.message);
+      toast.error(error.message);
       return;
     }
 
-    router.push("/marketplace");
+    toast.success("Selamat datang kembali! 👋");
+
+    setTimeout(() => {
+      router.push("/marketplace");
+    }, 800);
   }
 
   return (

@@ -3,6 +3,7 @@
 import AuthForm from "@/components/auth/AuthForm";
 import { signUp } from "@/services/auth/auth.service";
 import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -11,11 +12,15 @@ export default function RegisterPage() {
     const { error } = await signUp(email, password);
 
     if (error) {
-      alert(error.message);
+      toast.error(error.message);
       return;
     }
 
-    alert("Registrasi berhasil! Silakan cek email untuk verifikasi.");
+    toast.success("Registrasi berhasil! Silakan cek email untuk verifikasi.");
+
+    setTimeout(() => {
+      router.push("/login");
+    }, 1200);
 
     router.push("/login");
   }
