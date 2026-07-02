@@ -55,7 +55,7 @@ export default async function ProductDetailPage({ params }) {
 
           <p className="mt-6 leading-7 text-white/60">{product.description}</p>
 
-          <ProductActions />
+          <ProductActions productId={product.id} />
 
           <SellerCard />
 
