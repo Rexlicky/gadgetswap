@@ -1,7 +1,9 @@
 import Link from "next/link";
+import ProtectedRoute from "@/components/auth/ProtectedRoute";
 
 export default function WishlistPage() {
   return (
+    <ProtectedRoute>
     <main className="page-transition min-h-screen bg-black px-6 py-32 text-white">
       <div className="mx-auto max-w-7xl">
         <h1 className="text-5xl font-bold">Wishlist</h1>
@@ -37,6 +39,7 @@ export default function WishlistPage() {
           </Link>
         </div>
       </div>
-    </main>
+      </main>
+    </ProtectedRoute>
   );
 }
