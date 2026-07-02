@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import ThemeToggle from "./ThemeToggle";
 import { useAuth } from "@/context/AuthContext";
 import { supabase } from "@/lib/supabase/client";
 import {
@@ -13,6 +12,7 @@ import {
   Settings,
   LogOut,
   ChevronDown,
+  Moon,
 } from "lucide-react";
 
 export default function Navbar() {
@@ -126,7 +126,7 @@ export default function Navbar() {
         {/* =========================
             Desktop Menu
         ========================= */}
-        <div className="hidden items-center gap-8 text-sm md:flex">
+        <div className="ml-2 hidden items-center gap-6 text-sm md:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -178,8 +178,6 @@ export default function Navbar() {
               )}
             </Link>
           ))}
-
-          <ThemeToggle />
 
           {!user ? (
             <button
@@ -242,6 +240,26 @@ export default function Navbar() {
                     Pengaturan
                   </button>
 
+                  <button
+                    className="
+    flex
+    w-full
+    items-center
+    gap-3
+    rounded-xl
+    px-4
+    py-3
+    text-left
+    text-sm
+    transition
+    hover:bg-white/5
+  "
+                  >
+                    <Moon size={18} />
+
+                    <span>Dark Mode</span>
+                  </button>
+
                   <hr className="my-2 border-white/10" />
 
                   <button
@@ -255,6 +273,38 @@ export default function Navbar() {
               )}
             </div>
           )}
+
+          <Link href="/cart" className="relative">
+            <ShoppingCart
+              className="
+      h-6
+      w-6
+      text-white/70
+      transition
+      hover:text-cyan-400
+    "
+            />
+
+            <span
+              className="
+      absolute
+      -right-2
+      -top-2
+      flex
+      h-5
+      w-5
+      items-center
+      justify-center
+      rounded-full
+      bg-cyan-500
+      text-[10px]
+      font-bold
+      text-black
+    "
+            >
+              0
+            </span>
+          </Link>
 
           <button
             onClick={() =>
