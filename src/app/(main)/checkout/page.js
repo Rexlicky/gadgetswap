@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import TransactionTimeline from "@/components/checkout/TransactionTimeline";
 import CheckoutDetails from "@/components/checkout/CheckoutDetails";
@@ -5,12 +6,18 @@ import ShippingAddress from "@/components/checkout/ShippingAddress";
 import ShippingMethod from "@/components/checkout/ShippingMethod";
 import PaymentMethod from "@/components/checkout/PaymentMethod";
 import OrderNote from "@/components/checkout/OrderNote";
-
-export const metadata = {
-  title: "Checkout Rekber",
-};
+import { useState } from "react";
+import ReceiverInformation from "@/components/checkout/ReceiverInformation";
 
 export default function CheckoutPage() {
+  const [receiver, setReceiver] = useState({
+    name: "",
+    phone: "",
+  });
+
+  const isFormValid =
+    receiver.name.trim() !== "" && receiver.phone.trim() !== "";
+  
   return (
     <main className="page-transition min-h-screen bg-black px-6 py-32 text-white">
       <div className="mx-auto max-w-5xl">
@@ -72,9 +79,11 @@ export default function CheckoutPage() {
             </Link>
           </div>
         </div>
+        <ReceiverInformation receiver={receiver} setReceiver={setReceiver} />
+
         <TransactionTimeline />
 
-        <CheckoutDetails />
+        <CheckoutDetails isFormValid={isFormValid} />
 
         <ShippingAddress />
 
@@ -83,6 +92,28 @@ export default function CheckoutPage() {
         <PaymentMethod />
 
         <OrderNote />
+
+        <div className="mt-10">
+          <button
+            disabled={!isFormValid}
+            className="
+      w-full
+      rounded-2xl
+      bg-gradient-to-r
+      from-cyan-500
+      to-violet-500
+      py-4
+      text-lg
+      font-semibold
+      transition
+      hover:scale-[1.02]
+      disabled:cursor-not-allowed
+      disabled:opacity-40
+    "
+          >
+            Buat Pesanan
+          </button>
+        </div>
       </div>
     </main>
   );
