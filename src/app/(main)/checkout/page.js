@@ -1,6 +1,10 @@
 import Link from "next/link";
 import TransactionTimeline from "@/components/checkout/TransactionTimeline";
 import CheckoutDetails from "@/components/checkout/CheckoutDetails";
+import ShippingAddress from "@/components/checkout/ShippingAddress";
+import ShippingMethod from "@/components/checkout/ShippingMethod";
+import PaymentMethod from "@/components/checkout/PaymentMethod";
+import OrderNote from "@/components/checkout/OrderNote";
 
 export const metadata = {
   title: "Checkout Rekber",
@@ -71,6 +75,14 @@ export default function CheckoutPage() {
         <TransactionTimeline />
 
         <CheckoutDetails />
+
+        <ShippingAddress />
+
+        <ShippingMethod />
+
+        <PaymentMethod />
+
+        <OrderNote />
       </div>
     </main>
   );
