@@ -3,6 +3,7 @@ import "./globals.css";
 import { WishlistProvider } from "@/context/WishlistContext";
 import { Toaster } from "sonner";
 import { AuthProvider } from "@/context/AuthContext";
+import { CartProvider } from "@/context/CartContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -48,8 +49,11 @@ export default function RootLayout({ children }) {
       <body className="min-h-full bg-black text-white">
         <AuthProvider>
           <WishlistProvider>
-            {children}
+            <CartProvider>
 
+              {children}
+            
+            </CartProvider>
             <Toaster position="top-right" richColors closeButton />
           </WishlistProvider>
         </AuthProvider>

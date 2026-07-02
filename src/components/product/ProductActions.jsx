@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { toast } from "sonner";
 import { useState } from "react";
+import { useCart } from "@/context/CartContext";
 
 export default function ProductActions({ productId }) {
   const [loadingCart, setLoadingCart] = useState(false);
@@ -25,6 +26,8 @@ export default function ProductActions({ productId }) {
         toast.error("Gagal menambahkan produk ke keranjang.");
         return;
       }
+
+      await refreshCart();
 
       toast.success("Produk berhasil ditambahkan ke keranjang.");
     } finally {

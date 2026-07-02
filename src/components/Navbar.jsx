@@ -14,12 +14,15 @@ import {
   ChevronDown,
   Moon,
 } from "lucide-react";
+import { useCart } from "@/context/CartContext";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   const { user } = useAuth();
+  const { cartCount } = useCart();
+  
   const router = useRouter();
   const [openMenu, setOpenMenu] = useState(false);
 
@@ -285,25 +288,27 @@ export default function Navbar() {
     "
             />
 
-            <span
-              className="
-      absolute
-      -right-2
-      -top-2
-      flex
-      h-5
-      w-5
-      items-center
-      justify-center
-      rounded-full
-      bg-cyan-500
-      text-[10px]
-      font-bold
-      text-black
-    "
-            >
-              0
-            </span>
+            {cartCount > 0 && (
+              <span
+                className="
+        absolute
+        -right-2
+        -top-2
+        flex
+        h-5
+        w-5
+        items-center
+        justify-center
+        rounded-full
+        bg-cyan-500
+        text-[10px]
+        font-bold
+        text-black
+      "
+              >
+                {cartCount}
+              </span>
+            )}
           </Link>
 
           <button
