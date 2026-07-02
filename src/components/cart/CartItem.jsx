@@ -1,6 +1,10 @@
-import { Minus, Plus } from "lucide-react";
+import { Minus, Plus, Trash2 } from "lucide-react";
+import { useCart } from "@/context/CartContext";
 
 export default function CartItem({ item }) {
+  const { refreshCart } = useCart();
+  const product = item.product;
+
   async function updateQuantity(newQuantity) {
     if (newQuantity < 1) return;
 
@@ -14,10 +18,24 @@ export default function CartItem({ item }) {
       }),
     });
 
+    await refreshCart();
+
     window.location.reload();
   }
 
-  const product = item.product;
+  async function deleteItem() {
+    const confirmDelete = confirm("Hapus produk dari keranjang?");
+
+    if (!confirmDelete) return;
+
+    await fetch(`/api/cart/${item.id}`, {
+      method: "DELETE",
+    });
+
+    await refreshCart();
+
+    window.location.reload();
+  }
 
   return (
     <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-6">
@@ -47,16 +65,16 @@ export default function CartItem({ item }) {
             <button
               onClick={() => updateQuantity(item.quantity - 1)}
               className="
-      rounded-lg
-      border
-      border-white/10
-      p-2
-      transition
-      hover:bg-white/10
-      hover:border-cyan-400/40
-      hover:text-cyan-400
-      hover:shadow-[0_0_20px_rgba(34,211,238,.25)]
-    "
+                rounded-lg
+                border
+                border-white/10
+                p-2
+                transition
+                hover:border-cyan-400/40
+                hover:bg-white/10
+                hover:text-cyan-400
+                hover:shadow-[0_0_20px_rgba(34,211,238,.25)]
+              "
             >
               <Minus size={16} />
             </button>
@@ -68,18 +86,35 @@ export default function CartItem({ item }) {
             <button
               onClick={() => updateQuantity(item.quantity + 1)}
               className="
-      rounded-lg
-      border
-      border-white/10
-      p-2
-      transition
-      hover:bg-white/10
-      hover:border-cyan-400/40
-      hover:text-cyan-400
-      hover:shadow-[0_0_20px_rgba(34,211,238,.25)]
-    "
+                rounded-lg
+                border
+                border-white/10
+                p-2
+                transition
+                hover:border-cyan-400/40
+                hover:bg-white/10
+                hover:text-cyan-400
+                hover:shadow-[0_0_20px_rgba(34,211,238,.25)]
+              "
             >
               <Plus size={16} />
+            </button>
+
+            <button
+              onClick={deleteItem}
+              className="
+                rounded-lg
+                border
+                border-red-500/30
+                p-2
+                text-red-400
+                transition
+                hover:border-red-400
+                hover:bg-red-500/10
+                hover:shadow-[0_0_20px_rgba(239,68,68,.25)]
+              "
+            >
+              <Trash2 size={16} />
             </button>
           </div>
         </div>
