@@ -1,4 +1,22 @@
+import { Minus, Plus } from "lucide-react";
+
 export default function CartItem({ item }) {
+  async function updateQuantity(newQuantity) {
+    if (newQuantity < 1) return;
+
+    await fetch(`/api/cart/${item.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        quantity: newQuantity,
+      }),
+    });
+
+    window.location.reload();
+  }
+
   const product = item.product;
 
   return (
@@ -25,7 +43,45 @@ export default function CartItem({ item }) {
             }).format(product.price)}
           </p>
 
-          <p className="mt-2 text-sm text-white/50">Qty: {item.quantity}</p>
+          <div className="mt-4 flex items-center justify-end gap-3">
+            <button
+              onClick={() => updateQuantity(item.quantity - 1)}
+              className="
+      rounded-lg
+      border
+      border-white/10
+      p-2
+      transition
+      hover:bg-white/10
+      hover:border-cyan-400/40
+      hover:text-cyan-400
+      hover:shadow-[0_0_20px_rgba(34,211,238,.25)]
+    "
+            >
+              <Minus size={16} />
+            </button>
+
+            <span className="w-8 text-center font-semibold">
+              {item.quantity}
+            </span>
+
+            <button
+              onClick={() => updateQuantity(item.quantity + 1)}
+              className="
+      rounded-lg
+      border
+      border-white/10
+      p-2
+      transition
+      hover:bg-white/10
+      hover:border-cyan-400/40
+      hover:text-cyan-400
+      hover:shadow-[0_0_20px_rgba(34,211,238,.25)]
+    "
+            >
+              <Plus size={16} />
+            </button>
+          </div>
         </div>
       </div>
     </div>
