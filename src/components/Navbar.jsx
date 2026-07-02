@@ -2,14 +2,26 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import ThemeToggle from "./ThemeToggle";
-import { useWishlist } from "@/context/WishlistContext";
+import { useAuth } from "@/context/AuthContext";
+import { supabase } from "@/lib/supabase/client";
+import {
+  User,
+  Heart,
+  ShoppingCart,
+  Settings,
+  LogOut,
+  ChevronDown,
+} from "lucide-react";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { wishlistCount } = useWishlist();
+
+  const { user } = useAuth();
+  const router = useRouter();
+  const [openMenu, setOpenMenu] = useState(false);
 
   const pathname = usePathname();
 
@@ -24,6 +36,14 @@ export default function Navbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  async function handleLogout() {
+    await supabase.auth.signOut();
+
+    router.push("/");
+
+    router.refresh();
+  }
 
   const navItems = [
     {
@@ -161,31 +181,80 @@ export default function Navbar() {
 
           <ThemeToggle />
 
-          <Link href="/wishlist" className="relative">
-            <button className="text-xl transition hover:scale-110">🤍</button>
-
-            {wishlistCount > 0 && (
-              <span
-                className="
-        absolute
-        -right-2
-        -top-2
-        flex
-        h-5
-        w-5
-        items-center
-        justify-center
-        rounded-full
-        bg-red-500
-        text-[10px]
-        font-bold
-        text-white
-      "
+          {!user ? (
+            <button
+              onClick={() => router.push("/auth")}
+              className="rounded-full border border-cyan-400/30 bg-cyan-500/10 px-5 py-2 text-sm font-semibold text-cyan-300 transition hover:bg-cyan-500/20"
+            >
+              Masuk
+            </button>
+          ) : (
+            <div className="relative">
+              <button
+                onClick={() => setOpenMenu(!openMenu)}
+                className="flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 transition hover:bg-white/[0.08]"
               >
-                {wishlistCount}
-              </span>
-            )}
-          </Link>
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-cyan-500 to-violet-500">
+                  <User size={17} />
+                </div>
+
+                <div className="text-left">
+                  <p className="max-w-[100px] truncate text-sm font-semibold">
+                    {user.user_metadata?.fullName || "User"}
+                  </p>
+
+                  <p className="max-w-[120px] truncate text-xs text-white/40">
+                    {user.email}
+                  </p>
+                </div>
+
+                <ChevronDown size={16} />
+              </button>
+
+              {openMenu && (
+                <div className="absolute right-0 mt-3 w-64 rounded-3xl border border-white/10 bg-[#0F1118] p-3 shadow-2xl backdrop-blur-xl">
+                  <Link
+                    href="/profile"
+                    className="flex w-full items-center gap-3 rounded-xl p-3 hover:bg-white/5"
+                  >
+                    <User size={18} />
+                    Profil Saya
+                  </Link>
+
+                  <Link
+                    href="/wishlist"
+                    className="flex w-full items-center gap-3 rounded-xl p-3 hover:bg-white/5"
+                  >
+                    <Heart size={18} />
+                    Wishlist
+                  </Link>
+
+                  <Link
+                    href="/cart"
+                    className="flex w-full items-center gap-3 rounded-xl p-3 hover:bg-white/5"
+                  >
+                    <ShoppingCart size={18} />
+                    Keranjang
+                  </Link>
+
+                  <button className="flex w-full items-center gap-3 rounded-xl p-3 hover:bg-white/5">
+                    <Settings size={18} />
+                    Pengaturan
+                  </button>
+
+                  <hr className="my-2 border-white/10" />
+
+                  <button
+                    onClick={handleLogout}
+                    className="flex w-full items-center gap-3 rounded-xl p-3 text-red-400 hover:bg-red-500/10"
+                  >
+                    <LogOut size={18} />
+                    Logout
+                  </button>
+                </div>
+              )}
+            </div>
+          )}
 
           <button
             onClick={() =>
